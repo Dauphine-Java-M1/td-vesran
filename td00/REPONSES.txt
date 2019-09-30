@@ -14,4 +14,4 @@ TRAN Yves
 2.6) une liste de suggestions apparait (GetField, Generate...). De même pour "set". 
 
 
-
+changementquestion5
