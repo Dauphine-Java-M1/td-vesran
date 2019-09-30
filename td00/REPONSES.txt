@@ -1,6 +1,3 @@
-
-changementquestion4
-
 TRAN Yves
 
 1.4)  La version de Maven installée est la version 3.6.0.
@@ -17,4 +14,12 @@ TRAN Yves
 2.6) une liste de suggestions apparait (GetField, Generate...). De même pour "set". 
 
 
-changementquestion5
+GIT
+
+1.5) On nous indique un changment dans le fichier PrimeCollection.class.
+
+2.5) Le push a été rejeté. 
+2.7) Si des changements avaient eu lieu sur la même ligne du fichier, il y aurait eu un conflit. 
+
+
+
