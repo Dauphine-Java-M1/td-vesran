@@ -49,10 +49,9 @@ public class PrimeCollection {
     public static void main( String[] args )
     {
         PrimeCollection pc = new PrimeCollection();
-        pc.initRandom(100, 2000);
+        pc.initRandom(100, 1000);
         System.out.println(pc);
         
         pc.printPrime();
-        System.out.println(pc.isPrime(0));
     }
 }
