@@ -1,0 +1,17 @@
+TRAN Yves
+
+1.4)  La version de Maven installée est la version 3.6.0.
+1.5) Le groupId correspond à l'identifiant du groupe du projet Il s'agit d'un identifiant en plus du nom du projet pour éviter tout conflit de nom. Le champ artifactId correspond à l'identifiant du projet.
+1.6) Ce répertoire contient 3 dossiers : classes, maven-status et test-classes. 
+1.8) Le class path est le chemin d'accès au répertoire contenant les fichier .class afin qu'elles puissent être exécuter par une machine virtuelle Java. 
+1.13) Il s'agit de la version de la machine virtuelle Java utilisée pour exécuter les fichiers .class (bytecode). On lui passe la valeur 1.7.
+
+
+2.1) En exécutant cette commande, on obtient le message suivant : aucun attribut manifest principal dans target/td00-1.0-SNAPSHOT.jar
+2.3) En appuyant sur Ctrl+Espace après avoir tapé sysout, ce dernier se transforme en System.out.println(). 
+2.4) De même, l'expression est transformée en .toString() si "toStr" est appliquée à une varible (List li; li.toStr)
+2.5) En appuyant sur Ctrl+Espace, une liste d'options nous est proposant pour compléter l'expression tapée (main(String [] args), MarginBorder...)
+2.6) une liste de suggestions apparait (GetField, Generate...). De même pour "set". 
+
+
+
