@@ -4,8 +4,6 @@ import junit.framework.Test;
 import junit.framework.TestCase;
 import junit.framework.TestSuite;
 
-// import static junit.framework.Assert.assertTrue;
-
 /**
  * Unit test for PrimeCollection class.
  */
