@@ -24,7 +24,7 @@ public class PrimeCollection {
 		if (p <= 1) {
 			return false;
 		} 
-		for (int i = 2; i < Math.sqrt(p); i++) {
+		for (int i = 2; i <= Math.sqrt(p); i++) {
 			if (p % i == 0) {
 				return false;
 			}
