@@ -21,5 +21,8 @@ GIT
 2.5) Le push a été rejeté. 
 2.7) Si des changements avaient eu lieu sur la même ligne du fichier, il y aurait eu un conflit. 
 
+3.2) À l'exécution, on nous indique qu'un test produit une erreur and lançant un juint.framework.AssertionFailedError. La méthode assertTrue vérifie si la condition/booléen passé en paramètre est effectivement vrai. 
+
+
 
 

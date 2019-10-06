@@ -7,7 +7,7 @@ import junit.framework.TestSuite;
 // import static junit.framework.Assert.assertTrue;
 
 /**
- * Unit test for simple App.
+ * Unit test for PrimeCollection class.
  */
 public class PrimeCollectionTest 
     extends TestCase
@@ -33,7 +33,7 @@ public class PrimeCollectionTest
     /**
      * Rigourous Test :-)
      */
-    public void testApp()
+    public void testPrimeCollection()
     {
         assertTrue( true );
     }
