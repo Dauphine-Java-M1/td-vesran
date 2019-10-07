@@ -22,3 +22,9 @@ chaque fois qu'un objet Point est instancié.
 8) Le compilateur sait quel constructeur doit être appelé grâce à la signature du constructeur, plus précisemment au niveau
 du nombre et des types des variables passées en paramètre du constructeur.
 
+
+Exercice 2 :
+
+1) p1 == p2 donne true car les variables p1 t p2 sont références à la même adresse mémoire contrairement au variable p1 et
+p3 qui sont différentes (2 appels de la méthode new).
+
