@@ -33,3 +33,15 @@ malgré le fait que les coordonnées soient les mêmes.
 La méthode indexOf de ArrayList utilise la méthode equals de Point qui n'a pas été définie jusqu'à présent. Par défaut, le compilateur va utiliser
 la méthode equals de la class Object.
 
+Exercice 3 :
+
+2) Si la capacité est dépassée, une erreur est affichée.
+
+5) Si on fait un contains(null), on peut avoir un réponse positive même si aucun add(null) n'a été réalisé auparavant car
+les cases vides du tableau sont initialisées à null. En faisant un add(null), rien ne change.
+
+6) capacityPoint ne sert plus car la capacity d'une liste n'est pas connue/supposée très grande.
+nbPoints et contains reprennent les méthodes size() et contains de LinkedList.
+
+
+
