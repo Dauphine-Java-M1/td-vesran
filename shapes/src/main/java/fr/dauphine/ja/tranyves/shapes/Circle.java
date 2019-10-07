@@ -14,6 +14,10 @@ public class Circle {
         this.radius = radius;
     }
 
+    public Circle translate(int dx, int dy) {
+        return new Circle(this.center.translate(dx, dy), this.radius);
+    }
+
     @Override
     public String toString() {
         return "[Circle : center=" + this.center + " radius=" + this.radius + "]";
@@ -22,5 +26,7 @@ public class Circle {
     public static void main(String [] args) {
         Circle c = new Circle(5, 5, 2.3);
         System.out.println(c);
+
+        System.out.println(c.translate(1, 2));
     }
 }
