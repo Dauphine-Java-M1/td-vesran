@@ -10,3 +10,5 @@ accesseurs (des getters) pour que la valeur des attributs puissent être renvoy�
 
 3) L'avantage d'utiliser un champ privé est d'assurer que la variable ne sera pas changée en dehors de sa classe.
 
+4) Un accesseur est une méthode renvoyant la valeur d'un attribut dont sa visibilité est privée (getter).
+Il peut être intéressant de le faire dans la classe Point afin de pouvoir récupérer les valeurs x et y.
