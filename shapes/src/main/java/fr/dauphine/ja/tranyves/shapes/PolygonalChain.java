@@ -35,6 +35,15 @@ public class PolygonalChain {
         System.out.println("The array of points is full !");
     }
 
+    public boolean contains(Point originalPoint) {
+        for (Point p : this.points) {
+            if (p.equals(originalPoint)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
     @Override
     public String toString() {
         StringBuilder strb = new StringBuilder();
