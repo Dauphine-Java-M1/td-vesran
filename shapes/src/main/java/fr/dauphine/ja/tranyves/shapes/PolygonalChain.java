@@ -1,68 +1,43 @@
 package fr.dauphine.ja.tranyves.shapes;
 
+import java.util.LinkedList;
+import java.util.List;
+
 public class PolygonalChain {
 
-    private Point [] points;
+    private List<Point> points;
 
-    public PolygonalChain(int size) {
-        this.points = new Point[size];
-    }
-
-    public Point[] getPoints() {
-        return this.points;
+    public PolygonalChain() {
+        this.points = new LinkedList<>();
     }
 
     public int nbPoints() {
-        for (int i = 0 ; i < this.points.length ; i++) {
-            if (this.points[i] == null) {
-                return i;
-            }
-        }
-        return this.points.length;
+        return this.points.size();
     }
 
-    public int pointCapacity() {
-        return this.points.length - this.nbPoints();
+    public boolean contains(Point p) {
+        return this.points.contains(p);
     }
 
     public void add(Point p) {
-        for (int i = 0 ; i < this.points.length ; i++) {
-            if (this.points[i] == null) {
-                this.points[i] = p;
-                return;
-            }
-        }
-        System.out.println("The array of points is full !");
+       this.points.add(p);
     }
 
-    public boolean contains(Point originalPoint) {
-        for (Point p : this.points) {
-            if (p.equals(originalPoint)) {
-                return true;
-            }
-        }
-        return false;
-    }
-
-    @Override
     public String toString() {
-        StringBuilder strb = new StringBuilder();
-        strb.append("[");
-
-        for (Point p : this.points) {
-            strb.append(p + " ");
-        }
-
-        return strb.toString();
+        return this.points.toString();
     }
 
     public static void main(String [] args) {
-        PolygonalChain pc = new PolygonalChain(10);
+        PolygonalChain pc = new PolygonalChain();
 
         for (int i = 0 ; i < 13 ; i ++) {
             pc.add(new Point(1, 2));
         }
 
         System.out.println(pc);
+        System.out.println(pc.nbPoints());
+        System.out.println(pc.contains(null));
+        System.out.println(pc.contains(new Point(1, 111)));
+        System.out.println(pc.contains(new Point(1, 2)));
     }
 }
