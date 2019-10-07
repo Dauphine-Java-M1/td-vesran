@@ -12,6 +12,19 @@ public class PolygonalChain {
         return this.points;
     }
 
+    public int nbPoints() {
+        for (int i = 0 ; i < this.points.length ; i++) {
+            if (this.points[i] == null) {
+                return i;
+            }
+        }
+        return this.points.length;
+    }
+
+    public int pointCapacity() {
+        return this.points.length - this.nbPoints();
+    }
+
     public void add(Point p) {
         for (int i = 0 ; i < this.points.length ; i++) {
             if (this.points[i] == null) {
