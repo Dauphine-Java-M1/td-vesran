@@ -29,6 +29,10 @@ public class Point {
         return false;
     }
 
+    public Point translate(int dx, int dy) {
+        return new Point(this.x + dx, this.y + dy);
+    }
+
     @Override
     public String toString() {
         return "(" + this.x + ", " + this.y + ")";
