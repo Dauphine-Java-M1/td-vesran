@@ -1,0 +1,12 @@
+Exercice 1 :
+
+1) Le code fonctionne car les attributs de la classe Point x et y de type int sont mises à 0 si aucune affectation leur est attribuée.
+Ainsi, p.x et p.y valent 0.
+
+2) En lançant le même code sur une classe différente, on obtient une erreur nous indiquant que les attributs de la classe Point
+x et y ne sont pas accessibles à cause de leur niveau de visibilité privé.
+Afin d'y remédier, il est possible de changer le niveau de visibilité (en public par exemple) ou encore en implémentant des
+accesseurs (des getters) pour que la valeur des attributs puissent être renvoyés par appel des méthodes en question (p.getX() et p.getY() par exemple).
+
+3) L'avantage d'utiliser un champ privé est d'assurer que la variable ne sera pas changée en dehors de sa classe.
+
