@@ -12,3 +12,13 @@ accesseurs (des getters) pour que la valeur des attributs puissent être renvoy�
 
 4) Un accesseur est une méthode renvoyant la valeur d'un attribut dont sa visibilité est privée (getter).
 Il peut être intéressant de le faire dans la classe Point afin de pouvoir récupérer les valeurs x et y.
+
+5)
+6)
+
+7) Pour connaitre le nombre de points créés, il suffit de mettre en place une variable static dans la classe Point et de l'incrémenter
+chaque fois qu'un objet Point est instancié.
+
+8) Le compilateur sait quel constructeur doit être appelé grâce à la signature du constructeur, plus précisemment au niveau
+du nombre et des types des variables passées en paramètre du constructeur.
+
