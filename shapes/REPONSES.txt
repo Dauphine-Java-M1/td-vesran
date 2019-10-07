@@ -28,7 +28,8 @@ Exercice 2 :
 1) p1 == p2 donne true car les variables p1 t p2 sont références à la même adresse mémoire contrairement au variable p1 et
 p3 qui sont différentes (2 appels de la méthode new).
 
-3) Le compilateur nous indiquera que p2 est dans la liste et p3 ne l'est pas malgré le fait que les coordonnées sont les mêmes.
-La méthode indexOf de ArrayList utilise la méthode equals de Point qui n'a pas été défini jusqu'à présent. Par défaut, le compilateur va utiliser
+3) Le compilateur nous indiquera que p2 est dans la liste à la position 0 et p3 ne l'est pas (position -1)
+malgré le fait que les coordonnées soient les mêmes.
+La méthode indexOf de ArrayList utilise la méthode equals de Point qui n'a pas été définie jusqu'à présent. Par défaut, le compilateur va utiliser
 la méthode equals de la class Object.
 

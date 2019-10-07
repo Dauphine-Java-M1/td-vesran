@@ -1,6 +1,8 @@
 package fr.dauphine.ja.tranyves.shapes;
 
 
+import java.util.ArrayList;
+
 public class Point {
 
     public static int numberOfPoints;
@@ -32,13 +34,23 @@ public class Point {
         return "(" + this.x + ", " + this.y + ")";
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (o instanceof Point) {
+            return this.isSameAs((Point) o);
+        }
+        return false;
+    }
+
     public static void main(String [] args) {
-        Point p1 = new Point(1, 1);
-        Point p2 = new Point(p1);
-        Point p3 = new Point(1, 4);
-        System.out.println(Point.numberOfPoints);
-        System.out.println(p1.isSameAs(p2));
-        System.out.println(p1.isSameAs(null));
+        Point p1 = new Point(1, 2);
+        Point p2 = p1;
+        Point p3 = new Point(1, 2);
+
+        ArrayList<Point> list = new ArrayList<>();
+        list.add(p1);
+        System.out.println(list.indexOf(p2));
+        System.out.println(list.indexOf(p3));
     }
 
 }
