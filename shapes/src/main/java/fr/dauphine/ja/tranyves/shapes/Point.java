@@ -5,14 +5,13 @@ public class Point {
     private int x;
     private int y;
 
-    public void test() {
-        Point p = new Point();
-        System.out.println(p.x + " " + p.y);
+    public Point(int x, int y) {
+        this.x = x;
+        this.y = y;
     }
 
     public static void main(String [] args) {
-        Point p = new Point();
-        p.test();
+        Point p = new Point(1, 1);
     }
 
 }
