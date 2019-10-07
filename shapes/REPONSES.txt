@@ -51,4 +51,11 @@ public Point translate(int dx, int dy)
 public void translate(Point p)
 public Point translate(Point p)
 
+5) La méthode translate va modifier le centre des deux cercles.
+Afin d'éviter cette situation, il est possible de faire une copie du point (nouvel objet avac les même attributs) dans le constructeur
+de Circle.
+
+6) Avec une méthode getCenter(), il est possible de modifier le centre d'un cercle en dehors de la classe Circle et sans
+passer par la méthode translate.
+
 

@@ -10,8 +10,12 @@ public class Circle {
     }
 
     public Circle(Point center, double radius) {
-        this.center =center;
+        this.center = center;
         this.radius = radius;
+    }
+
+    public Point getCenter() {
+        return this.center.clone();
     }
 
     public Circle translate(int dx, int dy) {
@@ -28,5 +32,8 @@ public class Circle {
         System.out.println(c);
 
         System.out.println(c.translate(1, 2));
+
+        System.out.println(c.getCenter().translate(1, 1));
+        System.out.println(c.getCenter());
     }
 }
