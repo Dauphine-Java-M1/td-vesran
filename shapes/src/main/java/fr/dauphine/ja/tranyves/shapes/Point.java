@@ -15,10 +15,20 @@ public class Point {
         Point.numberOfPoints++;
     }
 
+    public Point(Point p) {
+        this.x = p.x;
+        this.y = p.y;
+    }
+
+    public String toString() {
+        return "(" + this.x + ", " + this.y + ")";
+    }
+
     public static void main(String [] args) {
         Point p1 = new Point(1, 1);
-        Point p2 = new Point(8, 9);
+        Point p2 = new Point(p1);
         System.out.println(Point.numberOfPoints);
+        System.out.println(p2);
     }
 
 }
