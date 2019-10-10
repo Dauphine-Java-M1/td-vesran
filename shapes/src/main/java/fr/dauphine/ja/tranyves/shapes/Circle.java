@@ -23,6 +23,10 @@ public class Circle {
         return this.center;
     }
 
+    public double getRadius() {
+        return this.radius;
+    }
+
     public void translate(int dx, int dy) {
         this.center.translate(dx, dy);
     }
@@ -46,6 +50,15 @@ public class Circle {
             if (c != null && c.contains(p)) {
                 return true;
             }
+        }
+        return false;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (o instanceof Circle) {
+            Circle another = (Circle) o;
+            return this.radius == another.radius && this.center.equals(another.center);
         }
         return false;
     }
