@@ -10,6 +10,11 @@ public class Circle {
     }
 
     public Circle(Point center, double radius) {
+        if (radius < 0) {
+            throw new RuntimeException("Radius must not be negative.");
+        }
+
+        // Building the circle
         this.center = center;
         this.radius = radius;
     }
@@ -20,6 +25,10 @@ public class Circle {
 
     public void translate(int dx, int dy) {
         this.center.translate(dx, dy);
+    }
+
+    public double surface() {
+        return 3.1415 * this.radius * this.radius;
     }
 
     @Override
@@ -37,5 +46,9 @@ public class Circle {
         c.getCenter().translate(1, 1);
         System.out.println(c);
         System.out.println(c.getCenter());
+
+        // Surface
+        Circle c2 = new Circle(1, 1, 1);
+        System.out.println(c2.surface());
     }
 }
