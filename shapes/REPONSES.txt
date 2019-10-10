@@ -70,4 +70,7 @@ Exercice 5 :
 
 1) Il peut être intéressant de faire de l'héritage car un anneau peut être vu comme un type de cercle.
 
+4) Si on fait System.out.println(ring) sans code supplémentaire, le compilateur affichera le hash de l'objet avec le nom de la classe.
+On peut le corriger en implémentant la méthode toString(Object o)
+
 
