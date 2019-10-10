@@ -66,3 +66,8 @@ Ainsi, dans le code donné, le centre du cercle ne change pas.
 Faire circle.contains(point, circle1, circle2) n'a pas de sens.
 
 
+Exercice 5 :
+
+1) Il peut être intéressant de faire de l'héritage car un anneau peut être vu comme un type de cercle.
+
+
