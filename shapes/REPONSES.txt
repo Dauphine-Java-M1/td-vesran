@@ -58,7 +58,10 @@ public Point translate(Point p)
 Afin d'éviter cette situation, il est possible de faire une copie du point (nouvel objet avac les même attributs) dans le constructeur
 de Circle.
 
-6) Avec une méthode getCenter(), il est possible de modifier le centre d'un cercle en dehors de la classe Circle et sans
-passer par la méthode translate.
+6) Avec une méthode getCenter(), il est impossible de modifier le centre d'un cercle car un nouveau point est renvoyé lorsque
+la méthode translate est utilisée.
+Ainsi, dans le code donné, le centre du cercle ne change pas.
+
+
 
 
