@@ -62,6 +62,7 @@ de Circle.
 la méthode translate est utilisée.
 Ainsi, dans le code donné, le centre du cercle ne change pas.
 
-
+9) Il est préférable d'en faire une méthode statique puisqu'on ne considère plus un cercle en particulier.
+Faire circle.contains(point, circle1, circle2) n'a pas de sens.
 
 

@@ -31,6 +31,25 @@ public class Circle {
         return 3.1415 * this.radius * this.radius;
     }
 
+    public boolean contains(Point p) {
+        double dist;
+
+        // Compute distance the given point and the center of the circle
+        dist = Math.sqrt(Math.pow(p.getX() - this.center.getX(), 2) + Math.pow(p.getY() - this.center.getY(), 2));
+
+        // The given point is out of the circle if the computed distance is higher than the radius
+        return dist <= this.radius;
+    }
+
+    public static boolean contains(Point p, Circle... circles) {
+        for (Circle c : circles) {
+            if (c != null && c.contains(p)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
     @Override
     public String toString() {
         return "[Circle : center=" + this.center + " radius=" + this.radius + "]";
@@ -50,5 +69,15 @@ public class Circle {
         // Surface
         Circle c2 = new Circle(1, 1, 1);
         System.out.println(c2.surface());
+
+        // Contains
+        Circle c3 = new Circle(1, 1, 1);
+        System.out.println(c3.contains(new Point(1, 0)));
+        System.out.println(c3.contains(new Point(0, 0)));
+
+        System.out.println(Circle.contains(new Point(0, 0), new Circle(1, 0, 1), new Circle(1, 0, 2)));
+        System.out.println(Circle.contains(new Point(10, 0), new Circle(1, 0, 1), new Circle(1, 0, 2)));
+
+
     }
 }
