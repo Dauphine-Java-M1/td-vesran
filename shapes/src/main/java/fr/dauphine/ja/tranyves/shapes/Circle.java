@@ -15,11 +15,11 @@ public class Circle {
     }
 
     public Point getCenter() {
-        return this.center.clone();
+        return this.center;
     }
 
-    public Circle translate(int dx, int dy) {
-        return new Circle(this.center.translate(dx, dy), this.radius);
+    public void translate(int dx, int dy) {
+        this.center.translate(dx, dy);
     }
 
     @Override
@@ -31,9 +31,11 @@ public class Circle {
         Circle c = new Circle(5, 5, 2.3);
         System.out.println(c);
 
-        System.out.println(c.translate(1, 2));
+        c.translate(1, 2);
+        System.out.println(c);
 
-        System.out.println(c.getCenter().translate(1, 1));
+        c.getCenter().translate(1, 1);
+        System.out.println(c);
         System.out.println(c.getCenter());
     }
 }

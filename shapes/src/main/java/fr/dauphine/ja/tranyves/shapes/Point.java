@@ -29,8 +29,9 @@ public class Point implements Cloneable {
         return false;
     }
 
-    public Point translate(int dx, int dy) {
-        return new Point(this.x + dx, this.y + dy);
+    public void translate(int dx, int dy) {
+        this.x += dx;
+        this.y += dy;
     }
 
     public Point clone() {
