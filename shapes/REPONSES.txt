@@ -13,8 +13,11 @@ accesseurs (des getters) pour que la valeur des attributs puissent être renvoy�
 4) Un accesseur est une méthode renvoyant la valeur d'un attribut dont sa visibilité est privée (getter).
 Il peut être intéressant de le faire dans la classe Point afin de pouvoir récupérer les valeurs x et y.
 
-5)
-6)
+5) Le constructeur sans paramètre semble inutilisable. Cela est dû au fait qu'un contructeur de Point a été implémenté,
+ce qui entraine la disparition du constructeur par défaut.
+
+6) Si on utilise les mêmes noms de variables pour les attributs et les paramètres du contructeur, il y a un risque de confusion.
+Afin d'éviter cette situation, on utilise le mot-clé this pour les attributs (this.x, this.y)
 
 7) Pour connaitre le nombre de points créés, il suffit de mettre en place une variable static dans la classe Point et de l'incrémenter
 chaque fois qu'un objet Point est instancié.
