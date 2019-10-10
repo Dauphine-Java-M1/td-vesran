@@ -3,7 +3,7 @@ package fr.dauphine.ja.tranyves.shapes;
 
 import java.util.ArrayList;
 
-public class Point implements Cloneable {
+public class Point {
 
     public static int numberOfPoints;
     private double x;
@@ -40,10 +40,6 @@ public class Point implements Cloneable {
     public void translate(int dx, int dy) {
         this.x += dx;
         this.y += dy;
-    }
-
-    public Point clone() {
-        return new Point(this.x, this.y);
     }
 
     @Override

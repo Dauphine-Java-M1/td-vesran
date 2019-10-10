@@ -11,7 +11,7 @@ public class Circle {
 
     public Circle(Point center, double radius) {
         if (radius < 0) {
-            throw new RuntimeException("Radius must not be negative.");
+            throw new IllegalArgumentException("Radius must not be negative.");
         }
 
         // Building the circle
