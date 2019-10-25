@@ -74,3 +74,12 @@ Exercice 5 :
 On peut le corriger en implémentant la méthode toString(Object o)
 
 
+#################################################################
+TP 3 : MVC
+#################################################################
+
+Exercice 1 :
+
+5) La méthode paintComponent() de JPanel est également appelé lors de la méthode repaint() de JPanel est utilisée.
+Celle-ci est appelée lors de la redéfinition d'un listener.
+

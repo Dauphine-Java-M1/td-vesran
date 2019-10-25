@@ -8,7 +8,7 @@ public class MyDisplay extends JPanel {
     @Override
     public void paintComponent(Graphics g) {
         super.paintComponent(g);
-        
+
         g.drawLine(10, 10, 400, 350);
     }
 
