@@ -32,8 +32,7 @@ public class Ring extends Circle {
     public boolean equals(Object o) {
         if (o instanceof Ring) {
             Ring another = (Ring) o;
-            return super.getCenter().equals(another.getCenter())
-                    && super.getRadius() == another.getRadius()
+            return super.getRadius() == another.getRadius()
                     && this.internalCircle.equals(another.internalCircle);
         }
         return false;

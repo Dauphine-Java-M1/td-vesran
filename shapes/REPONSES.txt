@@ -83,3 +83,8 @@ Exercice 1 :
 5) La méthode paintComponent() de JPanel est également appelé lors de la méthode repaint() de JPanel est utilisée.
 Celle-ci est appelée lors de la redéfinition d'un listener.
 
+6) Le package javax.awt est une bibliothèque qui utilise des services non implémentés en Java afin de réaliser des interfaces
+graphiques.
+Le package javax.swing est une bibliothèque implémentée en Java (fait partie de la Java Foundation Classes) et permet de
+créer des interfaces graphiques.
+
