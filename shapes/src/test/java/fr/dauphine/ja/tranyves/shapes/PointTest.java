@@ -1,5 +1,6 @@
 package fr.dauphine.ja.tranyves.shapes;
 
+import fr.dauphine.ja.tranyves.shapes.model.Point;
 import junit.framework.Test;
 import junit.framework.TestCase;
 import junit.framework.TestSuite;

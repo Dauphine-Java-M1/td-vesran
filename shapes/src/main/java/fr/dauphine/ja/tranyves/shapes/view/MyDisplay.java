@@ -1,25 +1,45 @@
 package fr.dauphine.ja.tranyves.shapes.view;
 
-import javax.swing.*;
+import fr.dauphine.ja.tranyves.shapes.model.Shape;
+import fr.dauphine.ja.tranyves.shapes.model.World;
+
+import javax.swing.JPanel;
+import javax.swing.JFrame;
 import java.awt.*;
 
 public class MyDisplay extends JPanel {
+
+    private World world;
+
+    public MyDisplay(World world) {
+        super();
+        this.world = world;
+    }
 
     @Override
     public void paintComponent(Graphics g) {
         super.paintComponent(g);
 
-        g.drawLine(10, 10, 400, 350);
+        Graphics2D g2 = (Graphics2D) g;
+        g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
+
+        for (Shape s : this.world.getShapes()) {
+            System.out.println(s);
+            s.getDrawer().draw(g2);
+        }
     }
 
     public static void main(String [] args) {
+        World w = new World();
+
         JFrame frame = new JFrame("Java avancé - Graphic Display");
 
         frame.setSize(new Dimension(500, 500));
         frame.setVisible(true);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-        MyDisplay d = new MyDisplay();
+        MyDisplay d = new MyDisplay(w);
         frame.add(d);
+
     }
 }

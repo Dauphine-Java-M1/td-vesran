@@ -1,4 +1,6 @@
-package fr.dauphine.ja.tranyves.shapes;
+package fr.dauphine.ja.tranyves.shapes.model;
+
+import fr.dauphine.ja.tranyves.shapes.view.RingDrawer;
 
 public class Ring extends Circle {
 
@@ -6,12 +8,17 @@ public class Ring extends Circle {
 
     public Ring(Point center, double externalRadius, double internalRadius) {
         super(center, externalRadius);
+        super.drawer = new RingDrawer(this);
 
         if (externalRadius < internalRadius) {
             throw new IllegalArgumentException("The radius for the external circle must be higher than the internal circle's");
         }
 
         this.internalCircle = new Circle(center, internalRadius);
+    }
+
+    public Circle getInternalCircle() {
+        return this.internalCircle;
     }
 
     public static boolean contains(Point p, Ring... rings) {
@@ -60,5 +67,6 @@ public class Ring extends Circle {
                 new Ring(new Point(0, 0), 30, 20));
         System.out.println(v);
         System.out.println(x);
+
     }
 }

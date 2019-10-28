@@ -1,15 +1,32 @@
-package fr.dauphine.ja.tranyves.shapes;
+package fr.dauphine.ja.tranyves.shapes.model;
+
+import fr.dauphine.ja.tranyves.shapes.view.PolygonalChainDrawer;
+import fr.dauphine.ja.tranyves.shapes.view.ShapeDrawer;
 
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Objects;
 
-public class PolygonalChain {
+public class PolygonalChain extends Shape {
 
     private List<Point> points;
 
     public PolygonalChain() {
+        super.drawer = new PolygonalChainDrawer(this);
         this.points = new LinkedList<>();
+    }
+
+    @Override
+    public ShapeDrawer getDrawer() {
+        return super.drawer;
+    }
+
+    public List<Point> getPoints() {
+        return this.points;
+    }
+
+    public Point get(int i) {
+        return this.points.get(i);
     }
 
     public int nbPoints() {
@@ -35,8 +52,6 @@ public class PolygonalChain {
         for (int i = 0 ; i < 13 ; i ++) {
             pc.add(new Point(1, 2));
         }
-
-//        pc.add(null);
 
         System.out.println(pc);
         System.out.println(pc.nbPoints());

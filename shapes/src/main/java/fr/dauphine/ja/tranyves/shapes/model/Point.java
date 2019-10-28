@@ -1,4 +1,4 @@
-package fr.dauphine.ja.tranyves.shapes;
+package fr.dauphine.ja.tranyves.shapes.model;
 
 
 import java.util.ArrayList;

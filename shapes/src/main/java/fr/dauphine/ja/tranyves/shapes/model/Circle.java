@@ -1,15 +1,24 @@
-package fr.dauphine.ja.tranyves.shapes;
+package fr.dauphine.ja.tranyves.shapes.model;
 
-public class Circle {
+import fr.dauphine.ja.tranyves.shapes.view.CircleDrawer;
+import fr.dauphine.ja.tranyves.shapes.view.ShapeDrawer;
+
+public class Circle extends Shape {
 
     private Point center;
     private double radius;
+
+    public Circle() {
+        super.drawer = new CircleDrawer(this);
+    }
 
     public Circle(int x, int y, double radius) {
         this(new Point(x, y), radius);
     }
 
     public Circle(Point center, double radius) {
+        this();
+
         if (radius < 0) {
             throw new IllegalArgumentException("Radius must not be negative.");
         }
@@ -25,6 +34,10 @@ public class Circle {
 
     public double getRadius() {
         return this.radius;
+    }
+
+    public ShapeDrawer getDrawer() {
+        return super.drawer;
     }
 
     public void translate(int dx, int dy) {
@@ -90,7 +103,6 @@ public class Circle {
 
         System.out.println(Circle.contains(new Point(0, 0), new Circle(1, 0, 1), new Circle(1, 0, 2)));
         System.out.println(Circle.contains(new Point(10, 0), new Circle(1, 0, 1), new Circle(1, 0, 2)));
-
 
     }
 }
