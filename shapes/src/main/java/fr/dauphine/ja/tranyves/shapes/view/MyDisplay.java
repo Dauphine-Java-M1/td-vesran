@@ -1,5 +1,6 @@
 package fr.dauphine.ja.tranyves.shapes.view;
 
+import fr.dauphine.ja.tranyves.shapes.controller.KeyController;
 import fr.dauphine.ja.tranyves.shapes.controller.MouseController;
 import fr.dauphine.ja.tranyves.shapes.model.Shape;
 import fr.dauphine.ja.tranyves.shapes.model.World;
@@ -42,6 +43,8 @@ public class MyDisplay extends JPanel {
         MyDisplay d = new MyDisplay(w);
         frame.add(d);
         d.addMouseMotionListener(new MouseController(w, d));
+        d.addKeyListener(new KeyController(w, d));
+        d.setFocusable(true);
 
     }
 }

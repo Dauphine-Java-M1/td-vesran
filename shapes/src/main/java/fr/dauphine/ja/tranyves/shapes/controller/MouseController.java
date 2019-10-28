@@ -18,14 +18,14 @@ public class MouseController implements MouseMotionListener {
     public MouseController(World world, MyDisplay view) {
         this.model = world;
         this.view = view;
-        this.selectedShape = world.getShapes().get(0);
+//        this.selectedShape = this.model.getShapes().get(0);
     }
 
     private Shape selectShapeThatContains(Point p) {
         for (Shape currentShape : this.model.getShapes()) {
             if (currentShape.contains(p)) {
 
-                if (!currentShape.equals(this.selectedShape)) {
+                if (this.selectedShape == null || !currentShape.equals(this.selectedShape)) {
                     return currentShape;
                 }
 
@@ -39,7 +39,7 @@ public class MouseController implements MouseMotionListener {
     public void mouseDragged(MouseEvent mouseEvent) {
         this.selectedShape = this.selectShapeThatContains(new Point(mouseEvent.getX(), mouseEvent.getY()));
         this.previousPosition = new Point(mouseEvent.getX(), mouseEvent.getY());
-
+        System.out.println(selectedShape);
     }
 
     @Override

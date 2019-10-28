@@ -9,11 +9,15 @@ public class World {
 
     public World() {
         this.shapes = new ArrayList<>();
-        this.init();
+//        this.init();
     }
 
     public List<Shape> getShapes() {
         return this.shapes;
+    }
+
+    public void add(Shape shape) {
+        this.shapes.add(shape);
     }
 
     public void init() {
