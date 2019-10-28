@@ -42,6 +42,13 @@ public class PolygonalChain extends Shape {
         this.points.add(p);
     }
 
+    @Override
+    public void translate(double dx, double dy) {
+        for (Point p : this.points) {
+            p.translate(dx, dy);
+        }
+    }
+
     public String toString() {
         return this.points.toString();
     }

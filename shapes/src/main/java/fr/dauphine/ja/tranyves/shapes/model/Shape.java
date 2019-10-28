@@ -6,6 +6,8 @@ public abstract class Shape {
 
     protected ShapeDrawer drawer;
 
+    public abstract boolean contains(Point p);
     public abstract ShapeDrawer getDrawer();
+    public abstract void translate(double dx, double dy);
 
 }

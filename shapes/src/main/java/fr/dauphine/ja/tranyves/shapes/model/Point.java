@@ -37,7 +37,7 @@ public class Point {
         return false;
     }
 
-    public void translate(int dx, int dy) {
+    public void translate(double dx, double dy) {
         this.x += dx;
         this.y += dy;
     }

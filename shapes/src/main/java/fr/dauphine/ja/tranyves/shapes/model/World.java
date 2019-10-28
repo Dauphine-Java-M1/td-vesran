@@ -6,7 +6,6 @@ import java.util.List;
 public class World {
 
     private List<Shape> shapes;
-    public Shape testShape = new Circle(20, 10, 10);
 
     public World() {
         this.shapes = new ArrayList<>();

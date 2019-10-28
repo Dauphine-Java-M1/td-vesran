@@ -68,6 +68,11 @@ public class Circle extends Shape {
     }
 
     @Override
+    public void translate(double dx, double dy) {
+        this.center.translate(dx, dy);
+    }
+
+    @Override
     public boolean equals(Object o) {
         if (o instanceof Circle) {
             Circle another = (Circle) o;
