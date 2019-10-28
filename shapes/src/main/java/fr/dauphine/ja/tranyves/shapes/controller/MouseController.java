@@ -8,16 +8,14 @@ import fr.dauphine.ja.tranyves.shapes.view.MyDisplay;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseMotionListener;
 
-public class MouseController implements MouseMotionListener {
+public class MouseController extends Controller implements MouseMotionListener {
 
-    private World model;
-    private MyDisplay view;
     private Shape selectedShape;
     private Point previousPosition;
 
     public MouseController(World world, MyDisplay view) {
-        this.model = world;
-        this.view = view;
+        super.model = world;
+        super.view = view;
 //        this.selectedShape = this.model.getShapes().get(0);
     }
 
@@ -31,7 +29,6 @@ public class MouseController implements MouseMotionListener {
 
             }
         }
-
         return null;
     }
 

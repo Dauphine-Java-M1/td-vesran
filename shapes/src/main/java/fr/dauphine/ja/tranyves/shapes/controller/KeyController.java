@@ -8,16 +8,14 @@ import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
-public class KeyController implements KeyListener {
+public class KeyController extends Controller implements KeyListener {
 
     private ShapeGenerator shapeGenerator;
-    private World model;
-    private MyDisplay view;
 
     public KeyController(World model, MyDisplay view) {
         this.shapeGenerator = new ShapeGenerator();
-        this.model = model;
-        this.view = view;
+        super.model = model;
+        super.view = view;
     }
 
     @Override
