@@ -9,7 +9,7 @@ public class World {
 
     public World() {
         this.shapes = new ArrayList<>();
-        this.init();
+//        this.init();
     }
 
     public List<Shape> getShapes() {
