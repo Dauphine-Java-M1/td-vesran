@@ -26,7 +26,6 @@ public class MyDisplay extends JPanel {
         g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
 
         for (Shape s : this.world.getShapes()) {
-            System.out.println(s);
             s.getDrawer().draw(g2);
         }
     }

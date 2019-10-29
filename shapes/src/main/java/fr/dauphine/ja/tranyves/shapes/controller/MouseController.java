@@ -22,11 +22,7 @@ public class MouseController extends Controller implements MouseMotionListener {
     private Shape selectShapeThatContains(Point p) {
         for (Shape currentShape : this.model.getShapes()) {
             if (currentShape.contains(p)) {
-
-                if (this.selectedShape == null || !currentShape.equals(this.selectedShape)) {
-                    return currentShape;
-                }
-
+                return currentShape;
             }
         }
         return null;
