@@ -18,6 +18,14 @@ public class MyDisplay extends JPanel {
         this.world = world;
     }
 
+    public int getBoundX() {
+        return this.world.getBoundX();
+    }
+
+    public int getBoundY() {
+        return this.world.getBoundY();
+    }
+
     @Override
     public void paintComponent(Graphics g) {
         super.paintComponent(g);
@@ -31,12 +39,11 @@ public class MyDisplay extends JPanel {
     }
 
     public static void main(String [] args) {
-        World w = new World();
+        World w = new World(500, 500);
 
         JFrame frame = new JFrame("Java avancé - Graphic Display");
 
-        frame.setSize(new Dimension(500, 500));
-        frame.setVisible(true);
+        frame.setSize(new Dimension(w.getBoundX(), w.getBoundY()));
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         MyDisplay d = new MyDisplay(w);
@@ -44,6 +51,8 @@ public class MyDisplay extends JPanel {
         d.addMouseMotionListener(new MouseController(w, d));
         d.addKeyListener(new KeyController(w, d));
         d.setFocusable(true);
+
+        frame.setVisible(true);
 
     }
 }

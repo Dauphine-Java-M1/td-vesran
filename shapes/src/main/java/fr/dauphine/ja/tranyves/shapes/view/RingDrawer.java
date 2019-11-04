@@ -8,14 +8,18 @@ import java.awt.Color;
 import java.awt.geom.Area;
 import java.awt.geom.Ellipse2D;
 import java.awt.Shape;
+import java.util.Random;
 
 public class RingDrawer implements ShapeDrawer {
 
     private Ring ring;
-    private Color color = Color.RED;
+    private Color color;
 
     public RingDrawer(Ring ring) {
         this.ring = ring;
+
+        Random rand = new Random();
+        this.color = new Color(rand.nextInt(255), 0, 0, rand.nextInt(150) + 100);
     }
 
     @Override

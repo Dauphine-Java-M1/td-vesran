@@ -12,11 +12,11 @@ public class MouseController extends Controller implements MouseMotionListener {
 
     private Shape selectedShape;
     private Point previousPosition;
+    private Point currentPosition;
 
     public MouseController(World world, MyDisplay view) {
         super.model = world;
         super.view = view;
-//        this.selectedShape = this.model.getShapes().get(0);
     }
 
     private Shape selectShapeThatContains(Point p) {
@@ -28,33 +28,34 @@ public class MouseController extends Controller implements MouseMotionListener {
         return null;
     }
 
+    private void updateMousePosition(MouseEvent mouseEvent) {
+        this.previousPosition = this.currentPosition;
+        this.currentPosition = new Point(mouseEvent.getX(), mouseEvent.getY());
+    }
+
     @Override
     public void mouseDragged(MouseEvent mouseEvent) {
-        this.selectedShape = this.selectShapeThatContains(new Point(mouseEvent.getX(), mouseEvent.getY()));
-        this.previousPosition = new Point(mouseEvent.getX(), mouseEvent.getY());
+
+        if (this.selectedShape == null) {
+            this.selectedShape = this.selectShapeThatContains(this.currentPosition);
+        }
         System.out.println(selectedShape);
+
+        // Compute delta position
+        double deltaX = this.currentPosition.getX() - this.previousPosition.getX();
+        double deltaY = this.currentPosition.getY() - this.previousPosition.getY();
+
+        // Update shape's position
+        this.selectedShape.translate(deltaX, deltaY);
+
+        this.view.repaint();
+
+        this.updateMousePosition(mouseEvent);
     }
 
     @Override
     public void mouseMoved(MouseEvent mouseEvent) {
-        if (selectedShape == null) {
-            return;
-
-        } else {
-            // Init previous position
-            if (this.previousPosition == null) {
-                this.previousPosition = new Point(mouseEvent.getX(), mouseEvent.getY());
-            }
-
-            // Compute delta position
-            double deltaX = mouseEvent.getX() - this.previousPosition.getX();
-            double deltaY = mouseEvent.getY() - this.previousPosition.getY();
-
-            // Update shape's position
-            this.selectedShape.translate(deltaX, deltaY);
-            this.previousPosition = new Point(mouseEvent.getX(), mouseEvent.getY());
-
-            this.view.repaint();
-        }
+        this.selectedShape = null;
+        this.updateMousePosition(mouseEvent);
     }
 }

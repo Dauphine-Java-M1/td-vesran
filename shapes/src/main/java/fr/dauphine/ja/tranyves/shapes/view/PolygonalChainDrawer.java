@@ -1,18 +1,21 @@
 package fr.dauphine.ja.tranyves.shapes.view;
 
-import fr.dauphine.ja.tranyves.shapes.model.Point;
 import fr.dauphine.ja.tranyves.shapes.model.PolygonalChain;
 
 import java.awt.*;
 import java.awt.geom.Line2D;
+import java.util.Random;
 
 public class PolygonalChainDrawer implements ShapeDrawer {
 
     private PolygonalChain chain;
-    private Color color = Color.BLUE;
+    private Color color;
 
-    public PolygonalChainDrawer(PolygonalChain chain) {  // TODO check class
+    public PolygonalChainDrawer(PolygonalChain chain) {
         this.chain = chain;
+
+        Random rand = new Random();
+        this.color = new Color(0, 0, rand.nextInt(255), rand.nextInt(150) + 100);
     }
 
     @Override

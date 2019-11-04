@@ -5,11 +5,23 @@ import java.util.List;
 
 public class World {
 
+    private final int boundX;
+    private final int boundY;
     private List<Shape> shapes;
 
-    public World() {
+    public World(int boundX, int boundY) {
         this.shapes = new ArrayList<>();
+        this.boundX = boundX;
+        this.boundY = boundY;
 //        this.init();
+    }
+
+    public int getBoundX() {
+        return this.boundX;
+    }
+
+    public int getBoundY() {
+        return this.boundY;
     }
 
     public List<Shape> getShapes() {

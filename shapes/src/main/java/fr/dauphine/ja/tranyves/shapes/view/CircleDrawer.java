@@ -4,14 +4,18 @@ import fr.dauphine.ja.tranyves.shapes.model.Circle;
 
 import java.awt.*;
 import java.awt.geom.Ellipse2D;
+import java.util.Random;
 
 public class CircleDrawer implements ShapeDrawer {
 
     private Circle circle;
-    private Color color = Color.GREEN;
+    private Color color;
 
     public CircleDrawer(Circle circle) {
         this.circle = circle;
+
+        Random rand = new Random();
+        this.color = new Color(0, rand.nextInt(255), 0, rand.nextInt(150) + 100);
     }
 
     @Override
