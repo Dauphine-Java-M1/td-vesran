@@ -54,5 +54,6 @@ public class MyDisplay extends JPanel {
 
         frame.setVisible(true);
 
+        System.out.println("Press SPACE to create a new random shape.");
     }
 }

@@ -39,7 +39,6 @@ public class MouseController extends Controller implements MouseMotionListener {
         if (this.selectedShape == null) {
             this.selectedShape = this.selectShapeThatContains(this.currentPosition);
         }
-        System.out.println(selectedShape);
 
         // Compute delta position
         double deltaX = this.currentPosition.getX() - this.previousPosition.getX();
