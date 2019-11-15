@@ -50,7 +50,7 @@ public class Panel {
         if (firstValue > lastValue) {
             throw new IllegalArgumentException("First bound cannot be greater than the second bound.");
         }
-        
+
         return new AbstractList<Integer>() {
 
             @Override
