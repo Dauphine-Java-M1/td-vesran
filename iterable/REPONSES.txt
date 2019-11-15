@@ -16,3 +16,4 @@ List.
 Il faut implémenter get() et size().
 Avec ces méthodes, il est possible de retrouver l'implémentation des autres méthodes de List (add, remove...).
 
+3) L'accès à un élément depuis une LinkedList est en O(n). La boucle for prend beaucoup trop de temps pour se terminer.
