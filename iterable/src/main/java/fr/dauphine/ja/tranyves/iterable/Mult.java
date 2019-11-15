@@ -15,22 +15,86 @@ public class Mult {
     }
 
     public static List<Integer> mult(final int scalar, final List<Integer> values) {
-        return new AbstractList<Integer>() {
+
+        // List implements RandomAccess
+        if (values instanceof RandomAccess) {
+            return new AbstractList<Integer>() {
+
+                @Override
+                public int size() {
+                    return values.size();
+                }
+
+                @Override
+                public Integer get(int index) {
+                    return values.get(index) * scalar;
+                }
+
+            };
+        }
+
+        // List does not implements RandomAccess
+        return new AbstractSequentialList<Integer>() {
+
+            @Override
+            public ListIterator<Integer> listIterator(final int index) {
+
+                return new ListIterator<Integer>() {
+
+                    ListIterator<Integer> lit = values.listIterator(index);
+
+                    @Override
+                    public boolean hasNext() {
+                        return lit.hasNext();
+                    }
+
+                    @Override
+                    public Integer next() {
+                        return lit.next() * scalar;
+                    }
+
+                    @Override
+                    public boolean hasPrevious() {
+                        return lit.hasPrevious();
+                    }
+                    @Override
+                    public Integer previous() {
+                        return lit.previous() * scalar;
+                    }
+
+                    @Override
+                    public int nextIndex() {
+                        return lit.nextIndex();
+                    }
+
+                    @Override
+                    public int previousIndex() {
+                        return lit.previousIndex();
+                    }
+                    @Override
+                    public void remove() {
+                        lit.remove();
+                    }
+                    @Override
+                    public void set(Integer integer) {
+                        lit.set(integer);
+                    }
+                    @Override
+                    public void add(Integer integer) {
+                        lit.add(integer);
+                    }
+                };
+
+            }
 
             @Override
             public int size() {
                 return values.size();
             }
-
-            @Override
-            public Integer get(int index) {
-                return values.get(index) * scalar;
-            }
-
         };
     }
 
-    public static void f() {
+    public static void funcTest() {
         ArrayList<Integer> al = new ArrayList<>();
         for (int i = 0; i < 1000000; i++) {
             al.add(i);
@@ -46,7 +110,6 @@ public class Mult {
         for (int i = 0; i < 1000000; i++) {
             ll.add(i);
         }
-        System.out.println("added");
         t0 = System.nanoTime();
         sum=0;
         ret = Mult.mult(2, ll);
@@ -61,6 +124,6 @@ public class Mult {
         values = mult(2, values);
         System.out.println(values);
 
-        f();
+        funcTest();
     }
 }
