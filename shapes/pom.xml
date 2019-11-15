@@ -30,7 +30,7 @@
         <configuration>
           <archive>
             <manifest>
-              <mainClass>fr.dauphine.ja.tranyves.shapes.model.Point</mainClass>
+              <mainClass>fr.dauphine.ja.tranyves.shapes.view.MyDisplay</mainClass>
               <addClasspath>true</addClasspath>
               <classpathPrefix>lib</classpathPrefix>
             </manifest>
