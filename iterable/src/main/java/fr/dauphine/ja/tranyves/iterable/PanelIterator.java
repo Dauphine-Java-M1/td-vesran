@@ -4,18 +4,28 @@ import java.util.Iterator;
 
 public class PanelIterator implements Iterator<Integer> {
 
-    @Override
-    public boolean hasNext() {
-        return false;
+    private int currentValue;
+    private int lastValue;
+
+    public PanelIterator(int firstValue, int lastValue) {
+        this.currentValue = firstValue;
+        this.lastValue = lastValue;
     }
 
     @Override
-    public Integer next(){
-        return null;
+    public boolean hasNext() {
+        return this.currentValue <= this.lastValue;
+    }
+
+    @Override
+    public Integer next() {
+//        int value = this.currentValue;
+//        this.currentValue++;
+        return this.currentValue++; // Return value, next inc
     }
 
     @Override
     public void remove() {
-        // do something...
+        // do nothing
     }
 }
