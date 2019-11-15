@@ -1,31 +1,10 @@
 package fr.dauphine.ja.tranyves.iterable;
 
+import java.util.AbstractList;
 import java.util.Iterator;
+import java.util.List;
 
-public class Panel implements Iterator<Integer> {
-
-    private int currentValue;
-    private int lastValue;
-
-    public Panel(int firstValue, int lastValue) {
-        this.currentValue = firstValue;
-        this.lastValue = lastValue;
-    }
-
-    @Override
-    public boolean hasNext() {
-        return this.currentValue <= this.lastValue;
-    }
-
-    @Override
-    public Integer next() {
-        return this.currentValue;
-    }
-
-    @Override
-    public void remove() {
-        // Do nothing
-    }
+public class Panel {
 
     public static Iterator<Integer> panel1Old(int firstValue, int lastValue) {
         return new PanelIterator(firstValue, lastValue);
@@ -66,6 +45,32 @@ public class Panel implements Iterator<Integer> {
         };
     }
 
+    public static AbstractList<Integer> panel(final int firstValue, final int lastValue) {
+
+        if (firstValue > lastValue) {
+            throw new IllegalArgumentException("First bound cannot be greater than the second bound.");
+        }
+        
+        return new AbstractList<Integer>() {
+
+            @Override
+            public int size() {
+                return lastValue - firstValue + 1;
+            }
+
+            @Override
+            public Integer get(int index) {
+                int value = firstValue + index;
+
+                if (value > lastValue) {
+                    throw new IndexOutOfBoundsException();
+                }
+
+                return value;
+            }
+        };
+    }
+
     public static void main(String [] args) {
         System.out.println("Start");
 
@@ -78,6 +83,13 @@ public class Panel implements Iterator<Integer> {
         for (int i : panel2(1, 5)) {
             System.out.println(i);
         }
+
+        System.out.println("Start 3");
+        List<Integer> l = panel(3, 6);
+        for (int i : l) {
+            System.out.println(i);
+        }
+        System.out.println(l.get(1));
 
     }
 }
