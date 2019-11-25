@@ -7,7 +7,7 @@ import java.util.List;
 
 public class Maximum {
 
-    public static int myMaxOld(int... values) {
+    private static int myMaxOld(int... values) {
         if (values == null || values.length == 0) {
             throw new IllegalArgumentException("Empty array or array is null");
         }
@@ -22,7 +22,7 @@ public class Maximum {
         return currentMax;
     }
 
-    public static <T extends Comparable<T>> T myMax(T... sequence) {
+    private static <T extends Comparable<T>> T myMax(T... sequence) {
         if (sequence == null || sequence.length == 0) {
             throw new IllegalArgumentException("Empty array or array is null");
         }
@@ -61,7 +61,7 @@ public class Maximum {
         return length;
     }
 
-    public static List<Integer> listLength2(List<? extends CharSequence> list) {
+    private static List<Integer> listLength2(List<? extends CharSequence> list) {
         ArrayList<Integer> length = new ArrayList<Integer>();
 
         for (CharSequence seq : list) {
@@ -71,7 +71,7 @@ public class Maximum {
         return length;
     }
 
-    public static <T, T1 extends T, T2 extends T> List<T> fusion(List<T1> l1, List<T2> l2) {
+    private static <T, T1 extends T, T2 extends T> List<T> fusion(List<T1> l1, List<T2> l2) {
         List<T> res = new ArrayList<T>();
 
         Iterator<T1> it1 = l1.iterator();
@@ -98,7 +98,7 @@ public class Maximum {
     }
 
     public static void main(String [] args) {
-        System.out.println(myMax(142352, 2434, 4));
+        System.out.println(myMax(3));
         System.out.println(myMax("aaa", "aba"));
 
         List<String> list = Arrays.asList("foo", "toto");
@@ -118,7 +118,7 @@ public class Maximum {
         List<Integer> l4 = Arrays.asList(10,20);
         List<Integer> r3 = fusion(l3,l4);
         List<?> r4 = fusion(l1,l3);
-        
+
     }
 
 }
