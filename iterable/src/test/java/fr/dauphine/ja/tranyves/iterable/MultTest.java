@@ -10,7 +10,7 @@ import org.junit.Assert;
 import org.junit.Test;
 
 public class MultTest {
-    
+
     @Test
     public void mult() {
         List<Integer> range = Panel.panel(-7, 7);
