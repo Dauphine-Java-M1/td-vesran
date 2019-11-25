@@ -5,3 +5,17 @@
 2) Pour que la méthode ne compile pas lorsqu'aucun argument est passé en paramètre, il suffit de lancer une exception
 lorsque le paramètre est null.
 
+4) L'interface Comparable<T> contient une méthode compareTo(T t) qui renvoie un integer popsitif ou négatif. Cela permet
+d'ordonner deux objets selon le signe de l'entier renvoyé. Une classe qui implémente Comparable<T> représente un objet
+qui peut être comparer à l'objet de type T.
+
+
+#######################################################################
+# EXERCICE 2
+#######################################################################
+
+1) Ce code ne compile pas car une list d'Object n'est pas une list de String. L'élément donné en paramètre ne
+concorde donc pas avec ce qui est attendu.
+
+2) On peut utiliser une wildcard.
+
