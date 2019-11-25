@@ -1,0 +1,7 @@
+#######################################################################
+# EXERCICE 1
+#######################################################################
+
+2) Pour que la méthode ne compile pas lorsqu'aucun argument est passé en paramètre, il suffit de lancer une exception
+lorsque le paramètre est null.
+
