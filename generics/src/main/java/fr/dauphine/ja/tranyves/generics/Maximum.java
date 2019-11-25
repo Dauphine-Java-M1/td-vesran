@@ -60,6 +60,16 @@ public class Maximum {
         return length;
     }
 
+    public static List<Integer> listLength2(List<? extends CharSequence> list) {
+        ArrayList<Integer> length = new ArrayList<Integer>();
+
+        for (CharSequence seq : list) {
+            length.add(seq.length());
+        }
+
+        return length;
+    }
+
     public static void main(String [] args) {
         System.out.println(myMax(142352, 2434, 4));
         System.out.println(myMax("aaa", "aba"));
@@ -69,7 +79,7 @@ public class Maximum {
 
         displayLengths(Arrays.asList("fsdov", "fsg"));
 
-        System.out.println(listLength(Arrays.asList("fsdov", "fsg")));
+        System.out.println(listLength2(Arrays.asList("fsdov", "fsg")));
     }
 
 }
