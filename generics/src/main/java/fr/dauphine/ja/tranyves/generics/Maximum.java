@@ -2,6 +2,7 @@ package fr.dauphine.ja.tranyves.generics;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Iterator;
 import java.util.List;
 
 public class Maximum {
@@ -70,6 +71,32 @@ public class Maximum {
         return length;
     }
 
+    public static <T, T1 extends T, T2 extends T> List<T> fusion(List<T1> l1, List<T2> l2) {
+        List<T> res = new ArrayList<T>();
+
+        Iterator<T1> it1 = l1.iterator();
+        Iterator<T2> it2 = l2.iterator();
+        int parity = 0;
+
+        while (it1.hasNext() || it2.hasNext()) {
+            if (parity++ % 2 == 0) {
+                if (it1.hasNext()) {
+                    res.add(it1.next());
+                } else if (it2.hasNext()) {
+                    res.add(it2.next());
+                }
+            } else {
+                if (it2.hasNext()) {
+                    res.add(it2.next());
+                } else if (it1.hasNext()) {
+                    res.add(it1.next());
+                }
+
+            }
+        }
+        return res;
+    }
+
     public static void main(String [] args) {
         System.out.println(myMax(142352, 2434, 4));
         System.out.println(myMax("aaa", "aba"));
@@ -80,6 +107,18 @@ public class Maximum {
         displayLengths(Arrays.asList("fsdov", "fsg"));
 
         System.out.println(listLength2(Arrays.asList("fsdov", "fsg")));
+
+        System.out.println(fusion(Arrays.asList("fef", "nj"), Arrays.asList(1, 2)));
+
+
+        List<String> l1= Arrays.asList("C", "rc");
+        List<StringBuilder> l2= Arrays.asList(new StringBuilder("a ma"), new StringBuilder("he!"));
+        List<? extends CharSequence> r1=fusion(l1,l2);
+        List<?> r2=fusion(l1,l2);List<Integer> l3 = Arrays.asList(1,2);
+        List<Integer> l4 = Arrays.asList(10,20);
+        List<Integer> r3 = fusion(l3,l4);
+        List<?> r4 = fusion(l1,l3);
+        
     }
 
 }

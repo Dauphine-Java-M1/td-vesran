@@ -19,3 +19,11 @@ concorde donc pas avec ce qui est attendu.
 
 2) On peut utiliser une wildcard.
 
+
+#######################################################################
+# EXERCICE 3
+#######################################################################
+
+2) Si on utilise la méthode list.get(i), on a une complexité en O(n^2) avec une LinkedList.
+On peut améliorer la complixité en utilisant des Iterators.
+
