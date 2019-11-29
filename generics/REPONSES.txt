@@ -27,3 +27,13 @@ concorde donc pas avec ce qui est attendu.
 2) Si on utilise la méthode list.get(i), on a une complexité en O(n^2) avec une LinkedList.
 On peut améliorer la complixité en utilisant des Iterators.
 
+
+#######################################################################
+# EXERCICE 5
+#######################################################################
+
+3) Si la liste passée en paramètre est une ArrayList, l'accès est est O(1) et par conséquent, cet algorithme de mélange
+est en O(n) puisque la liste est parcourue une seule fois.
+En revanche, si l'accès à la liste est en 0(n), alors le mélange est en O(n^2).
+Il est possible de restreindre le paramètre aux listes implémentant RandomAccess afin de préserver une complexité en
+O(n).
