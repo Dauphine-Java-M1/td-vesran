@@ -1,18 +1,13 @@
 package fr.dauphine.ja.tranyves.generics;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Iterator;
-import java.util.List;
+import java.sql.Date;
+import java.sql.Time;
+import java.util.*;
 
 public class Maximum {
 
-    private static int myMaxOld(int... values) {
-        if (values == null || values.length == 0) {
-            throw new IllegalArgumentException("Empty array or array is null");
-        }
-
-        int currentMax = values[0];
+    private static int myMaxOld(int v0, int... values) {
+        int currentMax = v0;
 
         for (Integer i : values) {
             if (currentMax < i) {
@@ -22,12 +17,8 @@ public class Maximum {
         return currentMax;
     }
 
-    private static <T extends Comparable<T>> T myMax(T... sequence) {
-        if (sequence == null || sequence.length == 0) {
-            throw new IllegalArgumentException("Empty array or array is null");
-        }
-
-        T currentMax = sequence[0];
+    private static <T extends Comparable<T>> T myMax(T v0, T... sequence) {
+        T currentMax = v0;
 
         for (T element : sequence) {
             if (element.compareTo(currentMax) > 0) {
@@ -118,6 +109,8 @@ public class Maximum {
         List<Integer> l4 = Arrays.asList(10,20);
         List<Integer> r3 = fusion(l3,l4);
         List<?> r4 = fusion(l1,l3);
+
+        myMax(new Time(0, 0, 0), new Date(0));
 
     }
 

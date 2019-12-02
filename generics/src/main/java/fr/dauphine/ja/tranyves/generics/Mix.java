@@ -1,11 +1,6 @@
 package fr.dauphine.ja.tranyves.generics;
 
-import java.util.List;
-import java.util.ArrayList;
-import java.util.RandomAccess;
-import java.util.Random;
-import java.util.Collections;
-import java.util.Arrays;
+import java.util.*;
 
 public class Mix {
 
@@ -22,7 +17,7 @@ public class Mix {
      * Knuth shuffle method
      * @param list list to shuffle
      */
-    private static <T, L extends List<T> & RandomAccess> void shuffle(L list) {
+    private static <T, L extends List<T> & RandomAccess> void shuffle1(L list) {
         Random rand = new Random();
         int j;
 
@@ -36,6 +31,27 @@ public class Mix {
         Collections.shuffle(list);
     }
 
+    public static void f() {
+        Random rand = new Random();
+        ArrayList<Double> l1 = new ArrayList<>();
+        ArrayList<Double> l2 = new ArrayList<>();
+        double d;
+
+        for (int i = 0; i < 10000000; i++) {
+            d = rand.nextDouble();
+            l1.add(d);
+            l2.add(d);
+        }
+
+        long start = System.currentTimeMillis();
+        shuffle1(l1);
+        System.out.println(System.currentTimeMillis() - start);
+
+        start = System.currentTimeMillis();
+        shuffle2(l2);
+        System.out.println(System.currentTimeMillis() - start);
+    }
+
     public static void main(String [] args) {
         List<Integer> list = new ArrayList<>();
         list.addAll(Arrays.asList(1, 2, 3, 4, 5));
@@ -46,7 +62,10 @@ public class Mix {
         ArrayList<Integer> list2 = new ArrayList<>();
         list2.addAll(Arrays.asList(1, 2, 3, 4, 5, 6));
         System.out.println(list2);
-        shuffle2(list2);
+        shuffle1(list2);
         System.out.println(list2);
+
+        f();
+
     }
 }
