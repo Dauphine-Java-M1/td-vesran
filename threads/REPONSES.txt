@@ -1,0 +1,8 @@
+###################################################################################
+# Exercice 1
+###################################################################################
+
+5) Il peut arriver que deux threads effectuent la même itération. En effet, il se peut que la mise à jour de l'entier n
+soit interrompue par l'ordonnanceur. De ce fait, le deuxième thread exécute la méthode  display10000times avec le
+même numéro d'itération que le premier thread.
+
