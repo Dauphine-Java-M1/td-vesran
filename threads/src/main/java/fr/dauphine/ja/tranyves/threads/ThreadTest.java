@@ -4,15 +4,28 @@ public class ThreadTest {
 
     private static int n;
     private static Object monitor = new Object();
+    private static boolean flag;
 
     public static Runnable display10000times(final int id) {
         return new Runnable() {
 
             public void run() {
-                while (ThreadTest.n < 10000) {
+//                while (ThreadTest.n < 10000) {
+//                    synchronized (ThreadTest.monitor) {
+//                        System.out.println("Je suis le thread " + id + " et j'effectue l'iteration " + ThreadTest.n);
+//                        ThreadTest.n++;
+//                    }
+//                }
+                while (ThreadTest.n < 100) {
                     synchronized (ThreadTest.monitor) {
-                        System.out.println("Je suis le thread " + id + " et j'effectue l'iteration " + ThreadTest.n);
-                        ThreadTest.n++;
+                        if (ThreadTest.n < 100) {
+                            flag = true;
+                        }
+
+                        if (flag) {
+                            System.out.println("Je suis le thread " + id + " et j'effectue l'iteration " + ThreadTest.n++);
+                            flag = false;
+                        }
                     }
                 }
             }
