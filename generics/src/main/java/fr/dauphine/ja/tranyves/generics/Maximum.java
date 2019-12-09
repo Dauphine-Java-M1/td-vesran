@@ -62,11 +62,14 @@ public class Maximum {
         return length;
     }
 
-    private static <T, T1 extends T, T2 extends T> List<T> fusion(List<T1> l1, List<T2> l2) {
+    /*
+     * Lengths may be different (see method fusion2)
+     */
+    private static <T> List<T> fusion(List<? extends T> l1, List<? extends T> l2) {
         List<T> res = new ArrayList<T>();
 
-        Iterator<T1> it1 = l1.iterator();
-        Iterator<T2> it2 = l2.iterator();
+        Iterator<? extends T> it1 = l1.iterator();
+        Iterator<? extends T> it2 = l2.iterator();
         int parity = 0;
 
         while (it1.hasNext() || it2.hasNext()) {
@@ -84,6 +87,22 @@ public class Maximum {
                 }
 
             }
+        }
+        return res;
+    }
+
+    /*
+     * Lengths must be the same
+     */
+    private static <T> List<T> fusion2(List<? extends T> l1, List<? extends T> l2) {
+        List<T> res = new ArrayList<T>();
+
+        Iterator<? extends T> it1 = l1.iterator();
+        Iterator<? extends T> it2 = l2.iterator();
+
+        while (it1.hasNext()) {
+            res.add(it1.next());
+            res.add(it2.next());
         }
         return res;
     }
