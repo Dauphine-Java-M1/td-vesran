@@ -3,7 +3,7 @@ package fr.dauphine.ja.tranyves.threads;
 public class ThreadTest {
 
     private static int n;
-    private static Object monitor = new Object();
+    private final static Object monitor = new Object();
     private static boolean flag;
 
     public static Runnable display10000times(final int id) {
@@ -11,14 +11,19 @@ public class ThreadTest {
 
             public void run() {
 //                while (ThreadTest.n < 10000) {
+//                    // --> Thread 2 STOPPED during iteration 9999
 //                    synchronized (ThreadTest.monitor) {
-//                        System.out.println("Je suis le thread " + id + " et j'effectue l'iteration " + ThreadTest.n);
-//                        ThreadTest.n++;
+//                        // --> Thread 1 continue iteration 9999 from here (from where it stopped)
+//                        if (ThreadTest.n < 10000) {
+//                            System.out.println("Je suis le thread " + id + " et j'effectue l'iteration " + ThreadTest.n);
+//                            ThreadTest.n++;
+//                        }
 //                    }
 //                }
-                while (ThreadTest.n < 100) {
+                int limit = 10000;
+                while (ThreadTest.n < limit) {
                     synchronized (ThreadTest.monitor) {
-                        if (ThreadTest.n < 100) {
+                        if (ThreadTest.n < limit) {
                             flag = true;
                         }
 
