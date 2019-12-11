@@ -3,27 +3,30 @@ package fr.dauphine.ja.tranyves.threads;
 import java.sql.Time;
 import java.util.ArrayList;
 
-public class MySafeList {
+public class MySafeList extends ArrayList<Double>{
 
-    public ArrayList<Double> list;
-
-    public MySafeList() {
-        this.list = new ArrayList<Double>();
-    }
+    private Object monitorAdd = new Object();
+//    private Object monitorSize = new Object();
 
     public void add(double d) {
-        this.list.add(d);
+        synchronized (this.monitorAdd) {
+            super.add(d);
+        }
+//        super.add(d);
     }
 
     public int size() {
-        return this.list.size();
+//        synchronized (monitorSize) {
+//            return this.list.size();
+//        }
+        return super.size();
     }
 
     public Double get(int i) {
-        return this.list.get(i);
+        return super.get(i);
     }
 
-    public static MySafeList stressTest(int n, final int m) {
+    public static boolean stressTest(int n, final int m) throws InterruptedException {
         final MySafeList myList = new MySafeList();
 
         // Creating n thread that will add m times a value
@@ -38,26 +41,20 @@ public class MySafeList {
             }
 
             );
-            System.out.println("adding " + threads[i]);
-            System.out.println(threads.length);
         }
-        System.out.println(threads.length);
         for (int i = 0; i < n; i++) {
             threads[i].start();
         }
-        return myList;
+        // Displaying results
+        Thread.sleep(1000); // Waiting that threads finish their work
+        System.out.println("List size is " + myList.size() + " and should be " + n * m);
+        return myList.size() == n * m;
     }
 
     public static void main(String [] args) throws InterruptedException {
-        int n = 2;
-        int m = 10;
-        MySafeList myList = stressTest(n, m);
-
-        // This section happened before the end of thread's execution
-
-        Thread.sleep(1000);
-        System.out.println(myList.list);
-        System.out.println("List size is " + myList.size() + " and should be " + n * m);
+        int n = 29;
+        int m = 10000;
+        System.out.println(stressTest(n, m));
     }
 
 }
