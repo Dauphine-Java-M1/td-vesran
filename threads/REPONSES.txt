@@ -6,3 +6,13 @@
 soit interrompue par l'ordonnanceur. De ce fait, le deuxième thread exécute la méthode  display10000times avec le
 même numéro d'itération que le premier thread.
 
+
+
+##################################################################################
+# Exercice 3
+##################################################################################
+
+6) Avec 2 threads, les temps d'exécution sont assez équivalentes.
+En lançant la comparaison sur plus de threads, on voit qu'à partir de 3 threads, le gain de temps en important.
+On obtient un minimum (au niveau du temps d'éxécution) aux alentours de 11 à 12 threads. Au delà, le temps d'exécution
+augmente légèrement.
